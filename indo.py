@@ -1,4 +1,5 @@
 import discord, asyncio, datetime, pytz
+import os
 
 client = discord.Client()
 
@@ -85,5 +86,5 @@ async def on_message(message):
             await message.channel.purge(limit=1)
             await message.channel.send("{}, 당신은 명령어를 사용할 수 있는 권한이 없습니다".format(message.author.mention))
 
-# 봇을 실행시키기 위한 토큰을 작성해주는 곳
-client.run('ODMxNTI0MDc3MjQ3OTIyMjY2.YHWfJA.zHB2l44xwIEKjP1P7cG9wB2Ld_E')
+access_token = os.environ["BOT_TOKEN"]
+client.run('access_token')
